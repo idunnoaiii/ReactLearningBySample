@@ -4,7 +4,7 @@ import TestUseUpdateEffect from './components/TestUseUpdateEffect';
 import './style.css';
 
 function App() {
-  return <TestUseDebounce/>;
+  return <TestUseUpdateEffect/>;
 }
 
 export default App;
