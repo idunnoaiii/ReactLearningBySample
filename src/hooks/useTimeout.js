@@ -17,7 +17,9 @@ export default function useTimeout(callback, delay) {
     }, delay);
   }, [delay]);
 
-  const clear = useCallback(() => {
+  const clear = useCallback(() => {    timeoutRef.current = setTimeout(() => {
+    callbackRef.current();
+  }, delay);
     console.log('clear');
     timeoutRef.current && clearTimeout(timeoutRef.current);
   }, []);

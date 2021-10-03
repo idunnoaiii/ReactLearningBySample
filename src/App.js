@@ -1,11 +1,10 @@
 import React from 'react';
-import TestLifecycle from './components/TestLifecycle';
-import Test from './components/Test';
+import TestUseDebounce from './components/TestUseDebounce';
+import TestUseUpdateEffect from './components/TestUseUpdateEffect';
 import './style.css';
 
 function App() {
-  return <TestLifecycle />;
-  // return <Test/>
+  return <TestUseUpdateEffect/>;
 }
 
 export default App;
