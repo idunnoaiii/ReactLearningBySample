@@ -1,0 +1,50 @@
+<div id="root"></div>
+
+<script>
+
+// const React = (function(){
+//   let _val;
+//   return {
+//     useState(initialValue) {
+//       _val = _val || initialValue; // gán lại giá trị mới sau mỗi lần chạy
+//       function setState(newVal) {
+//         _val = newVal;
+//       }
+//       return [_val, setState];
+//     },
+//   }
+// })();
+
+// const [count , setCount] = React.useState(1)
+// console.log(count)
+// setCount(1)
+// console.log(count)
+// setCount(2)
+// console.log(count)
+
+const MyReact = (function() {
+  let _val; // giữ state trong module scope
+  return {
+    render(Component) {
+      const Comp = Component();
+      Comp.render();
+      return Comp;
+    },
+    useState(initialValue) {
+      _val = _val || initialValue; // gán lại giá trị mới sau mỗi lần chạy
+      function setState(newVal) {
+        _val = newVal;
+      }
+      return [_val, setState];
+    },
+  };
+})();
+
+const [a, setA] = MyReact.useState(0)
+console.log(a)
+setA(1)
+console.log(a)
+
+
+
+</script>
