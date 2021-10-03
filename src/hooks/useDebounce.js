@@ -3,6 +3,6 @@ import useTimeout from './useTimeout';
 
 export default function useDebounce(callback, delay, deps) {
   const { reset, clear } = useTimeout(callback, delay);
-  useEffect(reset, [...deps]);
+  useEffect(reset, [...deps, reset]);
   useEffect(clear, []);
 }
